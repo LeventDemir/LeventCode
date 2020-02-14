@@ -16,10 +16,10 @@
         Phasellus nec iaculis mauris.
         Phasellus nec iaculis mauris
         Phasellus nec iaculis mauris.
-        <p>
-          <a href>more...</a>
-        </p>
       </div>
+      <p>
+        <a href>more...</a>
+      </p>
     </div>
   </div>
 </template>

@@ -26,6 +26,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/css/style.css',
     '~/assets/css/bulma.min.css'
   ],
   /*

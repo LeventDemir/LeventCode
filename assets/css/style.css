@@ -1,0 +1,8 @@
+.navbar-item {
+    cursor: pointer;
+}
+
+.content {
+    height: 90px;
+    overflow: hidden;
+}
