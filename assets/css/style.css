@@ -6,3 +6,9 @@
     height: 90px;
     overflow: hidden;
 }
+
+.hide-file-input {
+    position: absolute;
+    margin-top: 20px;
+    opacity: 0;
+  }
