@@ -2,12 +2,16 @@
   <div class="container">
     <div class="columns">
       <div class="column is-full">
-        <button class="button is-success is-fullwidth">
+        <nuxt-link
+          :to="{ name: 'dashboard-create' }"
+          class="button is-success is-fullwidth"
+          tag="button"
+        >
           <span class="icon is-small">
             <i class="fas fa-plus"></i>
           </span>
           <span>Create New</span>
-        </button>
+        </nuxt-link>
       </div>
     </div>
 
