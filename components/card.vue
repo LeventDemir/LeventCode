@@ -21,5 +21,21 @@
         <a href>more...</a>
       </p>
     </div>
+    <footer v-if="admin" class="card-footer">
+      <a href="#" class="card-footer-item has-text-success">Update</a>
+      <a href="#" class="card-footer-item has-text-danger">Delete</a>
+    </footer>
   </div>
 </template>
+
+
+<script>
+export default {
+  props: {
+    admin: {
+      type: Boolean,
+      default: false
+    }
+  }
+};
+</script>
