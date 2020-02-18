@@ -1,9 +1,7 @@
 <template>
-  <div class="container">
-    <div class="columns">
-      <div class="column is-full">
-        <ProductForm />
-      </div>
+  <div class="columns">
+    <div class="column is-full">
+      <ProductForm />
     </div>
   </div>
 </template>

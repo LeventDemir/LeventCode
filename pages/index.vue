@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <div class="columns is-multiline is-centered">
       <div v-for="i in 4" :key="i" class="column is-6">
         <Card />

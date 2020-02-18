@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
       <div class="navbar-brand">
         <div class="navbar-item is-size-3" style="color: #3273dc">Levent Code</div>
 
@@ -27,8 +27,8 @@
           <div class="navbar-item">Logout</div>
         </div>
       </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </template>
 
 

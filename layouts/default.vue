@@ -6,7 +6,9 @@
     <br />
     <br />
 
-    <nuxt />
+    <div class="container">
+      <nuxt />
+    </div>
 
     <br />
     <br />

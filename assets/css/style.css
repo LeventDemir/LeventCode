@@ -43,3 +43,16 @@
     margin-top: 20px;
     opacity: 0;
 }
+
+.layout-leave-to {
+    opacity: 0;
+    transition: 1s;
+}
+
+.layout-enter-active {
+    transition: opacity 1s;
+}
+
+.layout-enter {
+    opacity: 0;
+}
