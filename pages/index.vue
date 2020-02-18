@@ -21,6 +21,7 @@
 import Card from "@/components/card";
 
 export default {
+  layout: "home",
   components: { Card }
 };
 </script>

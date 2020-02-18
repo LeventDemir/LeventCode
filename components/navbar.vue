@@ -2,9 +2,7 @@
   <div class="container">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
-          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
-        </a>
+        <div class="navbar-item is-size-3" style="color: #3273dc">Levent Code</div>
 
         <a
           role="button"
