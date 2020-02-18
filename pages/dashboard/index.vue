@@ -19,7 +19,7 @@
     <br />
 
     <div class="columns is-multiline is-centered">
-      <div v-for="i in 8" :key="i" class="column is-4">
+      <div v-for="i in 8" :key="i" class="column is-one-third">
         <Card :admin="true" />
       </div>
     </div>

@@ -2,7 +2,12 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand">
-        <div class="navbar-item is-size-3" style="color: #3273dc">Levent Code</div>
+        <nuxt-link
+          :to="{ name: 'index' }"
+          class="navbar-item is-size-3"
+          style="color: #3273dc"
+          tag="div"
+        >Levent Code</nuxt-link>
 
         <a
           role="button"

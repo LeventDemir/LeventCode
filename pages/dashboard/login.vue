@@ -20,7 +20,11 @@
           </p>
         </div>
 
-        <button class="button is-success">Login</button>
+        <br />
+
+        <div class="has-text-centered">
+          <button class="button is-success">Login</button>
+        </div>
       </form>
     </div>
   </div>
