@@ -29,7 +29,7 @@
           <nuxt-link :to="{ name: 'works' }" class="navbar-item" tag="div">Works</nuxt-link>
           <nuxt-link :to="{ name: 'contact' }" class="navbar-item" tag="div">Contact</nuxt-link>
           <nuxt-link :to="{ name: 'dashboard' }" class="navbar-item" tag="div">Dashboard</nuxt-link>
-          <div class="navbar-item">Logout</div>
+          <div @click="$store.dispatch('admin/logout')" class="navbar-item">Logout</div>
         </div>
       </div>
     </div>

@@ -19,8 +19,8 @@
     <br />
 
     <div class="columns is-multiline is-centered">
-      <div v-for="i in 8" :key="i" class="column is-one-third">
-        <Card :admin="true" />
+      <div v-for="work in $store.getters['work/getWorks']" :key="work._id" class="column is-one-third">
+        <Card :admin="true" :data="work" />
       </div>
     </div>
   </div>
@@ -31,6 +31,7 @@
 import Card from "@/components/card";
 
 export default {
+  middleware: 'auth',
   components: { Card }
 };
 </script>

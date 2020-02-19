@@ -20,10 +20,10 @@ export const actions = {
             .then(response => {
                 if (response.data.success) {
                     dispatch('works')
-                    this.$flashMessage({ message: 'Ürün Oluşturuldu', class: 'is-success' })
+                    // this.$flashMessage({ message: 'Ürün Oluşturuldu', class: 'is-success' })
                     this.$router.push({ name: 'dashboard' })
                 } else {
-                    this.$flashMessage({ message: 'Bir hata oluştu!', class: 'is-danger' })
+                    // this.$flashMessage({ message: 'Bir hata oluştu!', class: 'is-danger' })
                 }
             })
     },
@@ -32,10 +32,10 @@ export const actions = {
             .then(response => {
                 if (response.data.success) {
                     dispatch('works')
-                    this.$flashMessage({ message: 'Ürün Güncellendi', class: 'is-success' })
+                    // this.$flashMessage({ message: 'Ürün Güncellendi', class: 'is-success' })
                     this.$router.push({ name: 'dashboard' })
                 } else {
-                    this.$flashMessage({ message: 'Bir hata oluştu!', class: 'is-danger' })
+                    // this.$flashMessage({ message: 'Bir hata oluştu!', class: 'is-danger' })
                 }
             })
     },
@@ -44,9 +44,9 @@ export const actions = {
             .then(response => {
                 if (response.data.success) {
                     dispatch('works')
-                    this.$flashMessage({ message: 'Ürün Silindi', class: 'is-success' })
+                    // this.$flashMessage({ message: 'Ürün Silindi', class: 'is-success' })
                 } else {
-                    this.$flashMessage({ message: 'Bir hata oluştu!', class: 'is-danger' })
+                    // this.$flashMessage({ message: 'Bir hata oluştu!', class: 'is-danger' })
                 }
             })
     },

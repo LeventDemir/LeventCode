@@ -32,10 +32,10 @@ export const actions = {
                     commit('setToken', response.data.token)
                     commit('setAuth', true)
 
-                    this.$flashMessage({ message: 'Giriş Yapıldı', class: 'is-success' })
+                    // this.$flashMessage({ message: 'Giriş Yapıldı', class: 'is-success' })
                     this.$router.push({ name: 'dashboard' })
                 } else {
-                    this.$flashMessage({ message: 'Kullanıcı adı yada şifrenizi yanlış girdiniz!', class: 'is-danger' })
+                    // this.$flashMessage({ message: 'Kullanıcı adı yada şifrenizi yanlış girdiniz!', class: 'is-danger' })
                 }
             })
     },
@@ -46,10 +46,10 @@ export const actions = {
                 commit('setToken', null)
                 commit('setAuth', false)
 
-                this.$flashMessage({ message: 'Çıkış Yapıldı', class: 'is-success' })
+                // this.$flashMessage({ message: 'Çıkış Yapıldı', class: 'is-success' })
                 this.$router.push({ name: 'dashboard-login' })
             } else {
-                this.$flashMessage({ message: 'Bir hata oluştu!', class: 'is-danger' })
+                // this.$flashMessage({ message: 'Bir hata oluştu!', class: 'is-danger' })
             }
         })
     },

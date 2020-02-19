@@ -1,7 +1,11 @@
 <template>
   <div class="columns is-multiline is-centered">
-    <div v-for="i in 8" :key="i" class="column is-one-third">
-      <Card />
+    <div
+      v-for="work in $store.getters['work/getWorks']"
+      :key="work._id"
+      class="column is-one-third"
+    >
+      <Card :data="work" />
     </div>
   </div>
 </template>
