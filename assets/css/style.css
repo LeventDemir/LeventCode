@@ -10,6 +10,9 @@
     .hero .navbar-menu {
         background-color: rgba(0, 0, 0, 0.5) !important;
     }
+    .hero .navbar-burger {
+        color: white;
+    }
     .columns {
         margin-right: 5px !important;
         margin-left: 5px !important;
