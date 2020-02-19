@@ -64,7 +64,7 @@ router.get('/works', (req, res) => {
         } else {
             res.json({ success: false })
         }
-    })
+    }).sort({ $natural: -1 })
 })
 
 

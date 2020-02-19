@@ -5,7 +5,7 @@
         <div class="field">
           <label class="label">Full Name</label>
           <p class="control has-icons-left">
-            <input v-model="mail.fullname" class="input" type="text" required />
+            <input v-model="mail.fullName" class="input" type="text" required />
             <span class="icon is-small is-left">
               <i class="fas fa-user"></i>
             </span>

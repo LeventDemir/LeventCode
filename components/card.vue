@@ -6,8 +6,8 @@
       </figure>
     </div>
     <div class="card-content">
+      <p class="is-size-4">{{ data.title }}</p>
       <div class="content">
-        <p>{{ data.title }}</p>
         <span>{{ data.description }}</span>
       </div>
       <p>

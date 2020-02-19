@@ -28,8 +28,17 @@
           <nuxt-link :to="{ name: 'about-me' }" class="navbar-item" tag="div">About me</nuxt-link>
           <nuxt-link :to="{ name: 'works' }" class="navbar-item" tag="div">Works</nuxt-link>
           <nuxt-link :to="{ name: 'contact' }" class="navbar-item" tag="div">Contact</nuxt-link>
-          <nuxt-link :to="{ name: 'dashboard' }" class="navbar-item" tag="div">Dashboard</nuxt-link>
-          <div @click="$store.dispatch('admin/logout')" class="navbar-item">Logout</div>
+          <nuxt-link
+            v-if="$store.getters['admin/getAuth']"
+            :to="{ name: 'dashboard' }"
+            class="navbar-item"
+            tag="div"
+          >Dashboard</nuxt-link>
+          <div
+            v-if="$store.getters['admin/getAuth']"
+            @click="$store.dispatch('admin/logout')"
+            class="navbar-item"
+          >Logout</div>
         </div>
       </div>
     </div>

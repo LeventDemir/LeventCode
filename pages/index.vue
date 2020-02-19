@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="columns is-multiline is-centered">
-      <div v-for="work in $store.getters['work/getWorks']" :key="work._id" class="column is-half">
+      <div
+        v-for="work in $store.getters['work/getWorks'].slice(0, 4)"
+        :key="work._id"
+        class="column is-half"
+      >
         <Card :data="work" />
       </div>
     </div>
