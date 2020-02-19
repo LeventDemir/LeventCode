@@ -42,6 +42,15 @@ export default {
   plugins: [
   ],
   /*
+  ** serverMiddleware 
+  */
+  serverMiddleware: [
+    {
+      path: 'api',
+      handler: '~/server/index.js'
+    }
+  ],
+  /*
   ** Nuxt.js dev-modules
   */
   buildModules: [

@@ -1,16 +1,16 @@
 <template>
   <div class="columns">
     <div class="column is-full">
-      <ProductForm />
+      <WorkForm />
     </div>
   </div>
 </template>
 
 
 <script>
-import ProductForm from "@/components/product-form";
+import WorkForm from "@/components/work-form";
 
 export default {
-  components: { ProductForm }
+  components: { WorkForm }
 };
 </script>

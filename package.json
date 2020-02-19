@@ -11,8 +11,12 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
-    "@nuxtjs/axios": "^5.3.6"
+    "@nuxtjs/axios": "^5.3.6",
+    "bcryptjs": "^2.4.3",
+    "js-cookie": "^2.2.1",
+    "mongoose": "^5.9.1",
+    "nodemailer": "^6.4.2",
+    "nuxt": "^2.0.0"
   },
   "devDependencies": {}
 }
