@@ -29,13 +29,15 @@ export const actions = {
             .then(response => {
                 if (response.data.token) {
                     cookie.set('token', response.data.token)
+                    
                     commit('setToken', response.data.token)
                     commit('setAuth', true)
 
-                    // this.$flashMessage({ message: 'Giriş Yapıldı', class: 'is-success' })
+                    this.$toast({ text: 'logged in', class: 'is-success' })
+                    
                     this.$router.push({ name: 'dashboard' })
                 } else {
-                    // this.$flashMessage({ message: 'Kullanıcı adı yada şifrenizi yanlış girdiniz!', class: 'is-danger' })
+                    this.$toast({ text: 'Username or password incorrect', class: 'is-danger' })
                 }
             })
     },
@@ -43,13 +45,15 @@ export const actions = {
         this.$axios.post('/admin/logout', { token: getters.getToken }).then(response => {
             if (response.data.success) {
                 cookie.remove('token')
+                
                 commit('setToken', null)
                 commit('setAuth', false)
 
-                // this.$flashMessage({ message: 'Çıkış Yapıldı', class: 'is-success' })
+                this.$toast({ text: 'logged out', class: 'is-success' })
+                
                 this.$router.push({ name: 'dashboard-login' })
             } else {
-                // this.$flashMessage({ message: 'Bir hata oluştu!', class: 'is-danger' })
+                this.$toast({ text: 'something went wrong', class: 'is-danger' })
             }
         })
     },

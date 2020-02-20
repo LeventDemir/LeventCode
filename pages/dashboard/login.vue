@@ -6,7 +6,7 @@
           <p class="control has-icons-left">
             <input
               v-model="admin.username"
-              class="input"
+              class="input is-rounded"
               type="text"
               placeholder="Username"
               required
@@ -21,7 +21,7 @@
           <p class="control has-icons-left">
             <input
               v-model="admin.password"
-              class="input"
+              class="input is-rounded"
               type="password"
               placeholder="Password"
               required

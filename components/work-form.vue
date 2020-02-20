@@ -77,16 +77,16 @@ export default {
       const files = e.target.files || e.dataTransfer.files;
       if (!files.length) return;
       const reader = new FileReader();
-      if (files[0].size / (1024 * 1024) < 6) {
+      if (files[0].size / (1024 * 1024) < 1) {
         const vm = this;
         reader.onload = e => (vm.work.photo = e.target.result);
         reader.readAsDataURL(files[0]);
         this.work.photo = "";
       } else {
-        // this.$flashMessage({
-        //   message: "yükleyeceğini fotoğraf 6mb dan küçük olmalıdır!",
-        //   class: "is-danger"
-        // });
+        this.$toast({
+          text: "The photo you will upload must be less than 6 MB!",
+          class: "is-danger"
+        });
       }
     },
     submit() {
