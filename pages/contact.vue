@@ -1,49 +1,57 @@
 <template>
-  <div class="columns">
-    <div class="column is-full">
-      <form @submit.prevent="$store.dispatch('contact/sendMessage', mail)">
-        <div class="field">
-          <label class="label">Full Name</label>
-          <p class="control has-icons-left">
-            <input v-model="mail.fullName" class="input" type="text" required />
-            <span class="icon is-small is-left">
-              <i class="fas fa-user"></i>
-            </span>
-          </p>
-        </div>
-        <div class="field">
-          <label class="label">Email</label>
-          <p class="control has-icons-left">
-            <input v-model="mail.email" class="input" type="email" required />
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-          </p>
-        </div>
-        <div class="field">
-          <label class="label">Phone</label>
-          <p class="control has-icons-left">
-            <input v-model="mail.phone" class="input" type="tel" required />
-            <span class="icon is-small is-left">
-              <i class="fas fa-phone"></i>
-            </span>
-          </p>
-        </div>
+  <div class="column">
+    <form @submit.prevent="$store.dispatch('contact/sendMessage', mail)">
+      <div class="field">
+        <p class="control has-icons-left">
+          <input
+            v-model="mail.fullName"
+            class="input is-rounded"
+            placeholder="Full Name"
+            type="text"
+            required
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+        </p>
+      </div>
 
-        <div class="field">
-          <label class="label">Message</label>
-          <div class="control">
-            <textarea v-model="mail.message" class="textarea" required></textarea>
-          </div>
-        </div>
+      <div class="field">
+        <p class="control has-icons-left">
+          <input
+            v-model="mail.email"
+            class="input is-rounded"
+            placeholder="Email"
+            type="email"
+            required
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+        </p>
+      </div>
 
-        <br />
+      <div class="field">
+        <p class="control has-icons-left">
+          <input v-model="mail.phone" class="input is-rounded" placeholder="Phone" type="tel" />
+          <span class="icon is-small is-left">
+            <i class="fas fa-phone"></i>
+          </span>
+        </p>
+      </div>
 
-        <div class="has-text-centered">
-          <button class="button is-success">Send</button>
+      <div class="field">
+        <div class="control">
+          <textarea v-model="mail.message" class="textarea" placeholder="Message" required></textarea>
         </div>
-      </form>
-    </div>
+      </div>
+
+      <br />
+
+      <div class="has-text-centered">
+        <button class="button is-link is-outlined is-rounded primary-button">Send</button>
+      </div>
+    </form>
   </div>
 </template>
 

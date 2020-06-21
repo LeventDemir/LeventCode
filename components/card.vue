@@ -5,14 +5,8 @@
         <img :src="data.photo" />
       </figure>
     </div>
-    <div class="card-content">
-      <p class="is-size-4">{{ data.title }}</p>
-      <div class="content">
-        <span>{{ data.description }}</span>
-      </div>
-      <p>
-        <nuxt-link :to="{ name: 'work-id', params: { id: data._id } }" tag="a">more...</nuxt-link>
-      </p>
+    <div class="card-content has-text-centered">
+      <a :href="data.link" target="_blank" class="is-size-5">{{ data.title }}</a>
     </div>
     <footer v-if="admin" class="card-footer">
       <nuxt-link

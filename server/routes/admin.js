@@ -28,37 +28,29 @@ router.post('/login', (req, res) => {
             const isMatch = bcrypt.compareSync(data.password, admin.password)
 
             if (isMatch) {
-                if (admin.login) {
-                    res.json({ token: admin.token })
-                } else {
+                if (admin.login) res.json({ token: admin.token })
+
+                else {
                     admin.token = createToken()
                     admin.login = true
 
                     admin.save(err => {
-                        if (!err) {
-                            res.json({ token: admin.token })
-                        } else {
-                            res.json({ success: false })
-                        }
+                        if (!err) res.json({ token: admin.token })
+
+                        else res.json({ success: false })
                     })
                 }
-            } else {
-                res.json({ success: false })
-            }
-        } else {
-            res.json({ success: false })
-        }
+            } else res.json({ success: false })
+        } else res.json({ success: false })
     })
 })
 
 
 router.get('/is-auth', (req, res) => {
     Admin.findOne({ token: req.query.token }, (err, admin) => {
-        if (admin) {
-            res.json({ auth: admin.login })
-        } else {
-            res.json({ success: false })
-        }
+        if (admin) res.json({ auth: admin.login })
+
+        else res.json({ success: false })
     })
 })
 
@@ -69,15 +61,11 @@ router.post('/logout', (req, res) => {
             admin.login = false
 
             admin.save(err => {
-                if (!err) {
-                    res.json({ success: true })
-                } else {
-                    res.json({ success: false })
-                }
+                if (!err) res.json({ success: true })
+
+                else res.json({ success: false })
             })
-        } else {
-            res.json({ success: false })
-        }
+        } else res.json({ success: false })
     })
 })
 

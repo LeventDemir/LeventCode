@@ -9,7 +9,7 @@ const work = require('./routes/work')
 const contact = require('./routes/contact')
 
 
-mongoose.connect('mongodb://localhost/levent-code', {
+mongoose.connect(process.env.DB || 'mongodb://localhost/levent-code', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true

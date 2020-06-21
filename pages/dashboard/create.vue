@@ -1,8 +1,6 @@
 <template>
-  <div class="columns">
-    <div class="column is-full">
-      <WorkForm operation="create" />
-    </div>
+  <div class="column">
+    <WorkForm operation="create" />
   </div>
 </template>
 
@@ -11,7 +9,7 @@
 import WorkForm from "@/components/work-form";
 
 export default {
-  middleware: 'auth',
+  middleware: "auth",
   components: { WorkForm }
 };
 </script>

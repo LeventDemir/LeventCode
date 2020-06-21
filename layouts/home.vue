@@ -11,10 +11,11 @@
     <div class="container">
       <div id="toast"></div>
 
-      <nuxt />
+      <div class="column">
+        <nuxt />
+      </div>
     </div>
 
-    <br />
     <br />
     <br />
     <br />

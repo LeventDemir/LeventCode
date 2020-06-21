@@ -13,14 +13,13 @@
     .hero .navbar-burger {
         color: white;
     }
-    .columns {
-        margin-right: 5px !important;
-        margin-left: 5px !important;
+    .primary-button {
+        width: 100% !important;
     }
 }
 
 .hero-bg {
-    background: url("https://images.unsplash.com/photo-1544256718-3bcf237f3974?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80");
+    background: url("../../static/hero.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -40,28 +39,22 @@
     color: white;
 }
 
-.content {
-    margin-top: 8px;
-    height: 90px;
-    overflow: hidden;
-}
-
 .hide-file-input {
     position: absolute;
     margin-top: 20px;
     opacity: 0;
 }
 
-.layout-leave-to {
+.layout-leave-to, .page-leave-to {
     opacity: 0;
-    transition: 1s;
+    transition: .5s;
 }
 
-.layout-enter-active {
-    transition: opacity 1s;
+.layout-enter-active, .page-enter-active {
+    transition: opacity .3s;
 }
 
-.layout-enter {
+.layout-enter, .page-enter {
     opacity: 0;
 }
 
@@ -71,10 +64,6 @@
 
 .card {
     transition: all .5s;
-}
-
-.article {
-    white-space: pre-wrap;
 }
 
 #toast {
@@ -116,7 +105,6 @@
     }
 }
 
-
 @keyframes fadeout {
     from {
         top: 100px;
@@ -126,4 +114,8 @@
         top: 50px;
         opacity: 0;
     }
+}
+
+.primary-button {
+    width: 25%
 }

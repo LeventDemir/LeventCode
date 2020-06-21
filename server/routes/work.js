@@ -5,14 +5,10 @@ const router = express.Router()
 
 
 router.post('/create', admin, (req, res) => {
-    const data = req.body
+    new Work(req.body).save(err => {
+        if (!err) res.json({ success: true })
 
-    new Work(data).save(err => {
-        if (!err) {
-            res.json({ success: true })
-        } else {
-            res.json({ success: false })
-        }
+        else res.json({ success: false })
     })
 })
 
@@ -22,20 +18,16 @@ router.post('/update', admin, (req, res) => {
 
     Work.findOne({ _id: data.id }, (err, work) => {
         if (work) {
-            work.title = data.title
-            work.description = data.description
             work.photo = data.photo
+            work.title = data.title
+            work.link = data.link
 
             work.save(err => {
-                if (!err) {
-                    res.json({ success: true })
-                } else {
-                    res.json({ success: false })
-                }
+                if (!err) res.json({ success: true })
+
+                else res.json({ success: false })
             })
-        } else {
-            res.json({ success: false })
-        }
+        } else res.json({ success: false })
     })
 })
 
@@ -44,37 +36,29 @@ router.post('/delete', admin, (req, res) => {
     Work.findOne({ _id: req.body.id }, (err, work) => {
         if (work) {
             work.remove(err => {
-                if (!err) {
-                    res.json({ success: true })
-                } else {
-                    res.json({ success: false })
-                }
+                if (!err) res.json({ success: true })
+
+                else res.json({ success: false })
             })
-        } else {
-            res.json({ success: false })
-        }
+        } else res.json({ success: false })
     })
 })
 
 
 router.get('/works', (req, res) => {
     Work.find({}, (err, works) => {
-        if (works) {
-            res.json(works)
-        } else {
-            res.json({ success: false })
-        }
+        if (works) res.json(works)
+
+        else res.json({ success: false })
     }).sort({ $natural: -1 })
 })
 
 
 router.get('/work', (req, res) => {
     Work.findOne({ _id: req.query.id }, (err, work) => {
-        if (work) {
-            res.json(work)
-        } else {
-            res.json({ success: false })
-        }
+        if (work) res.json(work)
+
+        else res.json({ success: false })
     })
 })
 

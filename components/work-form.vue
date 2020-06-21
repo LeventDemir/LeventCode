@@ -2,19 +2,20 @@
   <form @submit.prevent="submit">
     <div class="field">
       <p class="control">
-        <input v-model="work.title" class="input" type="text" placeholder="Title" required />
+        <input
+          v-model="work.title"
+          class="input is-rounded"
+          type="text"
+          placeholder="Title"
+          required
+        />
       </p>
     </div>
 
     <div class="field">
-      <div class="control">
-        <textarea
-          v-model="work.description"
-          class="textarea"
-          placeholder="Primary textarea"
-          required
-        ></textarea>
-      </div>
+      <p class="control">
+        <input v-model="work.link" class="input is-rounded" type="text" placeholder="Link" required />
+      </p>
     </div>
 
     <input
@@ -28,7 +29,8 @@
 
     <button
       @click="$refs.photoInput.click()"
-      class="button is-primary is-outlined is-fullwidth bold-border"
+      style="border-width: 2px"
+      class="button is-success is-outlined is-rounded is-fullwidth"
       type="button"
     >
       <span class="icon is-small">
@@ -39,7 +41,9 @@
 
     <br />
 
-    <button class="button is-success">{{ operation }}</button>
+    <div class="has-text-centered">
+      <button class="button is-link is-outlined is-rounded primary-button">{{ operation }}</button>
+    </div>
   </form>
 </template>
 
@@ -56,8 +60,8 @@ export default {
     return {
       work: {
         title: null,
-        description: null,
-        photo: null
+        photo: null,
+        link: null
       }
     };
   },
@@ -67,7 +71,7 @@ export default {
         .dispatch("work/work", this.$route.params.id)
         .then(response => {
           this.work.title = response.data.title;
-          this.work.description = response.data.description;
+          this.work.link = response.data.link;
           this.work.photo = response.data.photo;
         });
     }

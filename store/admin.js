@@ -29,32 +29,28 @@ export const actions = {
             .then(response => {
                 if (response.data.token) {
                     cookie.set('token', response.data.token)
-                    
+
                     commit('setToken', response.data.token)
                     commit('setAuth', true)
 
                     this.$toast({ text: 'logged in', class: 'is-success' })
-                    
+
                     this.$router.push({ name: 'dashboard' })
-                } else {
-                    this.$toast({ text: 'Username or password incorrect', class: 'is-danger' })
-                }
+                } else this.$toast({ text: 'Username or password incorrect', class: 'is-danger' })
             })
     },
     logout({ getters, commit }) {
         this.$axios.post('/admin/logout', { token: getters.getToken }).then(response => {
             if (response.data.success) {
                 cookie.remove('token')
-                
+
                 commit('setToken', null)
                 commit('setAuth', false)
 
                 this.$toast({ text: 'logged out', class: 'is-success' })
-                
+
                 this.$router.push({ name: 'dashboard-login' })
-            } else {
-                this.$toast({ text: 'something went wrong', class: 'is-danger' })
-            }
+            } else this.$toast({ text: 'something went wrong', class: 'is-danger' })
         })
     },
     isAuth({ getters, commit }) {

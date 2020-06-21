@@ -22,11 +22,9 @@ export const actions = {
                     dispatch('works')
 
                     this.$toast({ text: 'work created', class: 'is-success' })
-                    
+
                     this.$router.push({ name: 'dashboard' })
-                } else {
-                    this.$toast({ text: 'something went wrong', class: 'is-danger' })
-                }
+                } else this.$toast({ text: 'something went wrong', class: 'is-danger' })
             })
     },
     update({ rootGetters, dispatch }, work) {
@@ -34,13 +32,11 @@ export const actions = {
             .then(response => {
                 if (response.data.success) {
                     dispatch('works')
-                    
+
                     this.$toast({ text: 'work updated', class: 'is-success' })
 
                     this.$router.push({ name: 'dashboard' })
-                } else {
-                    this.$toast({ text: 'something went wrong', class: 'is-danger' })
-                }
+                } else this.$toast({ text: 'something went wrong', class: 'is-danger' })
             })
     },
     delete({ rootGetters, commit, dispatch }, id) {
@@ -50,15 +46,11 @@ export const actions = {
                     dispatch('works')
 
                     this.$toast({ text: 'work deleted', class: 'is-success' })
-                } else {
-                    this.$toast({ text: 'something went wrong', class: 'is-danger' })
-                }
+                } else this.$toast({ text: 'something went wrong', class: 'is-danger' })
             })
     },
     works({ commit }) {
-        return this.$axios.get('/work/works').then(response => {
-            commit('setWorks', response.data)
-        })
+        return this.$axios.get('/work/works').then(response => commit('setWorks', response.data))
     },
     work({ }, id) {
         return this.$axios.get('/work/work', { params: { id } })

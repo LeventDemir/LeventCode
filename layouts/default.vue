@@ -8,11 +8,10 @@
 
     <div class="container">
       <div id="toast"></div>
-      
+
       <nuxt />
     </div>
 
-    <br />
     <br />
     <br />
     <br />
